@@ -1,13 +1,9 @@
 import React from "react";
-import ReactDOM, { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
 import Counter, { randNumber, getRGB } from "./utils/functions";
-
-const n = new Counter();
-n.change(randNumber(101));
-n.inc();
-n.inc();
-console.log(n.val);
+import App from "./App.jsx";
+import "./index.css";
 
 const tag = createRoot(document.getElementById("root"));
-tag.render(<h1>{n.val}</h1>);
+tag.render(<App />);
