@@ -6,6 +6,14 @@ export const getRGB = () => {
   return `rgb(${randNumber(256)},${randNumber(256)},${randNumber(256)})`;
 };
 
+export const getArray = (n) => {
+  let arr = [];
+  while (n--) {
+    arr.push(null);
+  }
+  return arr;
+};
+
 class Counter {
   constructor() {
     this.val = 0;
