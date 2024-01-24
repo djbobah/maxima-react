@@ -1,6 +1,6 @@
 import React from "react";
 import CheckBox from "./components/CheckBox.tsx";
-import { getRGB, randNumber, getArray } from "./utils/functions";
+import { getRGB, randNumber, getArray } from "./utils/functions.ts";
 
 const icons = ["car", "rocket", "train", "bicycle", "truck", "subway", "plane"];
 

@@ -7,7 +7,7 @@ export const getRGB = () => {
 };
 
 export const getArray = (n) => {
-  let arr = [];
+  let arr: any[] = [];
   while (n--) {
     arr.push(null);
   }
@@ -15,10 +15,11 @@ export const getArray = (n) => {
 };
 
 class Counter {
+  val: number;
   constructor() {
     this.val = 0;
   }
-  change(newVal) {
+  change(newVal: number) {
     this.val = newVal;
   }
   inc() {
