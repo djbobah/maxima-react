@@ -1,3 +1,4 @@
+import CheckBox from "./components/CheckBox";
 import { getRGB, randNumber, getArray } from "./utils/functions";
 
 const icons = ["car", "rocket", "train", "bicycle", "truck", "subway", "plane"];
@@ -26,11 +27,12 @@ const App = () => {
   // while (n--) {
   //   arr.push(n);
   // }
-  const arr = getArray(15);
+  const arr = getArray(10);
 
   console.log(arr);
   return (
-    <div className="weather-grid">
+    <>
+      {/* <div className="weather-grid"> */}
       {/* {arr.map((item, index) => (
         <span key={index}>{item}</span>
       ))} */}
@@ -38,11 +40,23 @@ const App = () => {
       <Card />
       <Card />
       <Card />
-      <Card /> */}
-      {arr.map((item, index) => (
-        <Card key={index}>{item}</Card>
-      ))}
-    </div>
+      // <Card /> */}
+      {/* {arr.map((item, index) => (
+          <Card key={index}>{item}</Card>
+        ))}
+      </div> */}
+      <div className="checkBoxWrapper">
+        <CheckBox title="Неограниченное колличество учеников" />
+        <CheckBox title="Трансляции" />
+        <CheckBox title="Точная статистика" />
+        <CheckBox title="Производительную видеосвязь с учениками" />
+        <CheckBox title="Продукт с ежемесячной подпиской" />
+        <CheckBox title="Лучшая конфиденциальность и защита" />
+        <CheckBox title="Готовый шаблон для организации обучения" />
+        <CheckBox title="Сообщества" />
+        <CheckBox title="Любое количество уроков и учебных программ" />
+      </div>
+    </>
   );
 };
 

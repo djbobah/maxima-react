@@ -6,10 +6,10 @@ body {
   font-family: sans-serif;
 }
 #root {
-  height: 100vh;
+  height: 50vh;
   padding: 50px;
 }
-#root > div {
+#root > .weather-grid {
   display: grid;
   gap: 30px;
   height: 100%;
@@ -97,4 +97,9 @@ h1 {
   }
   grid-template-columns: repeat(5, 1fr);
   align-content: flex-start;
+}
+
+.checkBoxWrapper {
+  display: flex;
+  flex-wrap: wrap;
 }

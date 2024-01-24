@@ -1,0 +1,30 @@
+.box {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  color: #2f2a37;
+  text-align: center;
+  height: 56px;
+  width: fit-content;
+  /* flex-shrink: 0; */
+  border-radius: 84px;
+  background: linear-gradient(
+    180deg,
+    #fff -13.5%,
+    rgba(243, 246, 239, 0) 187.91%
+  );
+
+  box-shadow: 0px 0px 21px 7px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(5.5px);
+  font-family: Avenir;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  margin: 30px 30px 0 0;
+}
+.check {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
