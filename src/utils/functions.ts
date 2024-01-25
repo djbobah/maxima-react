@@ -7,7 +7,7 @@ export const getRGB = () => {
 };
 
 export const getArray = (n) => {
-  let arr: any[] = [];
+  let arr: unknown[] = [];
   while (n--) {
     arr.push(null);
   }
