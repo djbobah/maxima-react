@@ -4,8 +4,19 @@
 }
 body {
   font-family: sans-serif;
+
+  /* background-color: #cbcbcb; */
+  background-color: #f3f7ef;
 }
-#root {
+
+.container {
+  /* display: flex;
+  justify-content: center; */
+  margin: 0 auto;
+  width: 1200px;
+}
+
+/* #root {
   height: 50vh;
   padding: 50px;
 }
@@ -17,9 +28,9 @@ body {
 h1 {
   text-align: center;
   color: blue;
-}
+} */
 
-.weather-card {
+/* .weather-card {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -48,8 +59,8 @@ h1 {
   }
   body {
     font-family: sans-serif;
-  }
-  #root {
+  } */
+/* #root {
     height: 100vh;
     padding: 50px;
   }
@@ -61,15 +72,15 @@ h1 {
 
   #root > div > * {
     background-color: rgba(192, 192, 192, 0.2);
-  }
+  } */
 
-  h1 {
+/* h1 {
     text-align: center;
     color: blue;
     margin: 0;
-  }
+  } */
 
-  .weather-card {
+/* .weather-card {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -97,7 +108,7 @@ h1 {
   }
   grid-template-columns: repeat(5, 1fr);
   align-content: flex-start;
-}
+} */
 
 .checkBoxWrapper {
   display: flex;
