@@ -9,12 +9,12 @@ interface TextBlockProps {
   color?: string;
 }
 
-const TexBlock: React.FC<TextBlockProps> = ({
+const TexBlock = ({
   name = "Caption",
   text,
   variant,
   color,
-}) => {
+}: TextBlockProps) => {
   return (
     <div className="text-block">
       <h3

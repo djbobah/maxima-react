@@ -20,8 +20,8 @@ const App = () => {
         <PromoSection />
         <ExactlySection name="Точно подойдет для:" count={2}>
           {textContent
-            .filter((item) => item.block === "bottom")
-            .map((item, i) => (
+            .filter((item: { block: string }) => item.block === "bottom")
+            .map((item: { title: string; content: string }, i: number) => (
               <SimpleCard
                 key={i}
                 name={item.title}
@@ -35,17 +35,19 @@ const App = () => {
           description="Поможем перенести корпоративную академию, базу знаний, учебные курсы, настроим систему мотивации обучения, круглосуточная поддержка."
           count={3}
         >
-          {opotunityContent.map((item, i) => (
-            <OpotunityCard
-              key={i}
-              name={item.title}
-              text={item.text}
-              pic={`/assets/img/${item.img}`}
-            />
-          ))}
+          {opotunityContent.map(
+            (item: { title: string; text: string; img: string }, i: number) => (
+              <OpotunityCard
+                key={i}
+                name={item.title}
+                text={item.text}
+                pic={`/assets/img/${item.img}`}
+              />
+            )
+          )}
         </OpotunitySection>
       </main>
-      <div className="checkBoxWrapper">
+      {/* <div className="checkBoxWrapper">
         <CheckBox title="Неограниченное колличество учеников" />
         <CheckBox title="Трансляции" />
         <CheckBox title="Точная статистика" />
@@ -55,7 +57,7 @@ const App = () => {
         <CheckBox title="Готовый шаблон для организации обучения" />
         <CheckBox title="Сообщества" />
         <CheckBox title="Любое количество уроков и учебных программ" />
-      </div>
+      </div> */}
     </>
   );
 };
