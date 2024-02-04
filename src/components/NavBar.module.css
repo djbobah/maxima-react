@@ -3,7 +3,7 @@
   background-color: #f3f7ef;
   box-shadow: 0px 0px 10px #2f2a37;
   display: flex;
-
+  width: 100%;
   align-items: center;
 }
 .nav {

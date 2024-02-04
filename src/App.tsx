@@ -13,6 +13,7 @@ import OpotunityCard from "./components/OpotunityCard/OpotunityCard";
 // import { getRGB, randNumber, getArray } from "./utils/functions.ts";
 
 const App = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <NavBar />
