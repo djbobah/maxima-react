@@ -1,0 +1,48 @@
+.opotunitySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  margin-top: 80px;
+  font-size: 40px;
+  color: rgb(47, 42, 55);
+}
+
+.description {
+  /* Text */
+  color: rgb(110, 108, 114);
+  font-size: 20px;
+  line-height: 120%;
+  width: 770px;
+  text-align: center;
+  margin-top: 20px;
+}
+.card__block {
+  margin-top: 80px;
+  display: grid;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+.opotunity__shape {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: 150px;
+  top: 78px;
+  filter: blur(300px);
+  background: rgb(107, 255, 202);
+  z-index: -2;
+}
+.opotunity__shape2 {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  right: -900px;
+  top: 250px;
+  filter: blur(320px);
+  background: rgb(158, 0, 255);
+  z-index: -1;
+}

@@ -16,6 +16,7 @@
 
 .logo {
   width: fit-content;
+  cursor: pointer;
 }
 
 .menu {
@@ -25,7 +26,22 @@
 .language {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .languageItem {
   margin-right: 10px;
+}
+
+.menuItem {
+  cursor: pointer;
+  /* box-sizing: border-box; */
+  border-radius: 10px;
+  width: 130px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menuItem:hover {
+  border: solid 1px gray;
 }

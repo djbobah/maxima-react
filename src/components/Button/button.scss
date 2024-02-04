@@ -1,0 +1,20 @@
+.button {
+  width: 245px;
+  height: 55px;
+  font-size: 14px;
+  border-radius: 40px;
+  /* gradient */
+  background: linear-gradient(
+    130deg,
+    rgb(107, 255, 202) 13.336%,
+    rgb(0, 255, 71) 129.861%
+  );
+  line-height: 130%;
+  border: none;
+  text-transform: uppercase;
+  color: rgb(47, 42, 55);
+  cursor: pointer;
+}
+.button:hover {
+  border: solid 1px green;
+}

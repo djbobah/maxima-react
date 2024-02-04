@@ -1,0 +1,24 @@
+<svg width="51.000000" height="60.000000" viewBox="0 0 51 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip81_80">
+			<rect id="Frame" width="51.000000" height="60.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Frame" width="51.000000" height="60.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip81_80)">
+		<path id="Vector" d="M37.7029 34.2658C35.3631 37.7331 34.1194 41.8297 34.1348 46.0193L34.1348 46.9859L16.6144 46.9859C16.6578 42.6149 15.2991 38.3462 12.7396 34.8122C10.4416 31.6611 9.42023 27.7504 9.8822 23.8712C10.3011 20.449 11.8499 17.2669 14.2807 14.8339C16.7116 12.4008 19.8842 10.8575 23.2908 10.4507C25.4261 10.2132 27.5872 10.4293 29.634 11.0851C31.6809 11.7408 33.5678 12.8216 35.1724 14.2573C36.777 15.6931 38.0634 17.4518 38.9484 19.4193C39.8334 21.3867 40.297 23.5192 40.3094 25.6783C40.3138 28.7383 39.4059 31.7294 37.7029 34.2658Z" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M34.1348 52.267C34.1348 54.1247 33.4005 55.9063 32.0936 57.2199C30.7866 58.5335 29.014 59.2715 27.1656 59.2715L23.6532 59.2715C21.8049 59.2715 20.0323 58.5335 18.7253 57.2199C17.4183 55.9063 16.6841 54.1247 16.6841 52.267L16.6841 51.9868L34.1348 51.9868L34.1348 52.267Z" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M34.1348 46.9578L34.1348 51.9869L16.6144 51.9869L16.6144 46.9578L34.1348 46.9578Z" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M18.6772 29.7409L25.047 29.7409L25.047 38.9167L32.5876 24.6697L25.3815 24.6697L25.047 16.8528L18.6772 29.7409Z" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M25.047 0L25.047 5.61755" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M51 27.8916L45.4108 27.8916" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M5.58923 27.8916L0 27.8916" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M2.80164 5.61768L9.77075 12.6081" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M47.2785 5.60352L40.3233 12.6219" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M47.2785 48.947L40.3094 41.9565" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+		<path id="Vector" d="M2.80164 48.9611L9.75684 41.9426" stroke="#FF2E00" stroke-opacity="1.000000" stroke-width="2.000000"/>
+	</g>
+</svg>

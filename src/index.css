@@ -15,7 +15,9 @@ body {
   margin: 0 auto;
   width: 1200px;
 }
-
+main {
+  margin-top: 120px;
+}
 /* #root {
   height: 50vh;
   padding: 50px;
