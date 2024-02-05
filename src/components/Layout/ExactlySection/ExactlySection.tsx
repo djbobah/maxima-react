@@ -10,20 +10,18 @@ interface ExactlySectionProps {
   children?:
     | string
     | number
-    | boolean
     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | Iterable<React.ReactNode>
-    | React.ReactPortal
-    | null
-    | undefined;
+    | Iterable<React.ReactNode>;
+  setOpenModal: (a: boolean) => void;
 }
 
-const ExactlySection: React.FC<ExactlySectionProps> = ({
+const ExactlySection = ({
   name,
   count,
   size,
   children,
-}) => {
+  setOpenModal,
+}: ExactlySectionProps) => {
   const style = {
     gridTemplateColumns: `repeat(${count || 1}, ${size || "1fr"})`,
   };
@@ -39,7 +37,11 @@ const ExactlySection: React.FC<ExactlySectionProps> = ({
       <div className="container container2__block" style={style}>
         {children}
       </div>
-      <Button title="попробовать бесплатно" style={styleButton} />
+      <Button
+        title="попробовать бесплатно"
+        style={styleButton}
+        onClick={() => setOpenModal(true)}
+      />
     </section>
   );
 };

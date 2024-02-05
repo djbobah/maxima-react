@@ -16,12 +16,17 @@ import Modal from "./components/Modal/Modal";
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <NavBar />
       <main className="main">
-        <PromoSection />
-        <ExactlySection name="Точно подойдет для:" count={2}>
+        <PromoSection setOpenModal={setOpenModal} />
+        <ExactlySection
+          name="Точно подойдет для:"
+          count={2}
+          setOpenModal={setOpenModal}
+        >
           {textContent
             .filter((item: { block: string }) => item.block === "bottom")
             .map((item: { title: string; content: string }, i: number) => (
@@ -37,6 +42,7 @@ const App = () => {
           name="Возможности Ed Space"
           description="Поможем перенести корпоративную академию, базу знаний, учебные курсы, настроим систему мотивации обучения, круглосуточная поддержка."
           count={3}
+          setOpenModal={setOpenModal}
         >
           {opotunityContent.map(
             (item: { title: string; text: string; img: string }, i: number) => (

@@ -3,24 +3,39 @@ import { useState } from "react";
 
 import logo from "../../assets/img/logo_EdSpase_white.svg";
 import "./modal.scss";
+import Button from "../Button/Button";
 
-const Modal = ({ setOpenModal, openModal }) => {
+interface ModalProps {
+  setOpenModal: (a: boolean) => void;
+  openModal: boolean;
+}
+
+const Modal = ({ setOpenModal, openModal }: ModalProps) => {
   const [name, setName] = useState("");
   const [organization, setOrganization] = useState("");
   const [position, setPosition] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [agreement, setAgreement] = useState(false);
 
   const closeHandler = () => {
     setOpenModal(false);
-    // setAge(14);
     setName("");
+    setOrganization("");
+    setPosition("");
+    setEmail("");
+    setPhone("");
+    setAgreement(false);
   };
 
   const handler = (e) => {
     const data = {
       name,
-      // age,
+      organization,
+      position,
+      email,
+      phone,
+      agreement,
     };
     console.log(data);
     closeHandler();
@@ -34,8 +49,6 @@ const Modal = ({ setOpenModal, openModal }) => {
         </div>
         <img src={logo} className="modal__logo" alt="Logo" />
         <div className="modal__content">
-          {/* <label> */}
-          {/* <span>Имя</span> */}
           <input
             type="text"
             value={name}
@@ -66,18 +79,25 @@ const Modal = ({ setOpenModal, openModal }) => {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Телефон"
           />
-          {/* </label>
-          <label>
-            <span>Возраст</span>
-            <input
-              type="number"
-              max={99}
-              min={14}
-              value={age}
-              onChange={(e) => setAge(Number(e.target.value))}
-            />
-          </label> */}
-          <button onClick={handler}>Отправить</button>
+          <div className="agreementBlock">
+            <div>
+              <input
+                className="agreementBlockCheck"
+                type="checkbox"
+                checked={agreement}
+                id="check"
+                onChange={(e) => setAgreement(e.target.checked)}
+              />
+            </div>
+            <div className="agreementBlock_text">
+              <label htmlFor="check">Я согласен на обработку моих</label>
+              <div>
+                <a href="#">персональных данных</a>
+              </div>
+            </div>
+          </div>
+
+          <Button title="Отправить" onClick={handler} />
         </div>
       </div>
     </div>

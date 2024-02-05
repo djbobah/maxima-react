@@ -3,7 +3,11 @@ import MainImg from "../../../assets/img/MainImg.png";
 import "./index.scss";
 import Button from "src/components/Button/Button";
 
-const PromoSection = () => {
+interface PromoSectionProps {
+  setOpenModal: (a: boolean) => void;
+}
+
+const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
   return (
     <section className="promo container">
       <div className="promo__textBlock">
@@ -15,7 +19,10 @@ const PromoSection = () => {
           Мощный инструмент для организации обучения. Ваши ученики будут в
           восторге!
         </p>
-        <Button title="попробовать бесплатно" />
+        <Button
+          title="попробовать бесплатно"
+          onClick={() => setOpenModal(true)}
+        />
       </div>
       <div>
         <img className="promo__img" src={MainImg} alt="" />

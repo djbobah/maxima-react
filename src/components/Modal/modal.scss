@@ -1,12 +1,12 @@
 .modal-wrapper {
   position: fixed;
-  backdrop-filter: blur(65px);
+  backdrop-filter: blur(35px);
   background: linear-gradient(180deg, rgb(47, 42, 55), rgba(47, 42, 55, 0.1));
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  // display: none;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -27,7 +27,7 @@
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) -31.142%,
-    rgb(255, 255, 255) 117.416%
+    rgb(255, 255, 255) 120%
   );
 }
 .modal__close {
@@ -80,4 +80,27 @@ input {
   border-bottom: 1px;
   border-style: solid;
   border-color: rgb(243, 247, 239);
+}
+
+.agreementBlock {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  justify-items: start;
+  align-items: start;
+  justify-content: start;
+  align-content: start;
+  // gap: 10px;
+  // justify-content: flex-start;
+}
+
+.agreementBlockCheck {
+  height: 16px;
+  width: 16px;
+}
+.agreementBlock_text {
+  font-size: 14px;
+  color: #6e6c72;
+}
+.agreementBlock_text a {
+  color: #2f2a37;
 }

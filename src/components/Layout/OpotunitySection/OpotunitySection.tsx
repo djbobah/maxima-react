@@ -17,15 +17,17 @@ interface OpotunitySectionProps {
     | React.ReactPortal
     | null
     | undefined;
+  setOpenModal: (a: boolean) => void;
 }
 
-const OpotunitySection: React.FC<OpotunitySectionProps> = ({
+const OpotunitySection = ({
   name,
   description,
   count,
   size,
   children,
-}) => {
+  setOpenModal,
+}: OpotunitySectionProps) => {
   // console.log(count);
 
   const style = {
@@ -43,7 +45,11 @@ const OpotunitySection: React.FC<OpotunitySectionProps> = ({
       <div className="card__block" style={style}>
         {children}
       </div>
-      <Button title="попробовать бесплатно" style={styleButton}></Button>
+      <Button
+        title="попробовать бесплатно"
+        style={styleButton}
+        onClick={() => setOpenModal(true)}
+      />
       <div className="opotunity__shape"></div>
       <div className="opotunity__shape2"></div>
     </section>
