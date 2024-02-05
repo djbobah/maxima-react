@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./opotunitySection.scss";
-import OpotunityCard from "src/components/OpotunityCard/OpotunityCard";
+// import OpotunityCard from "src/components/OpotunityCard/OpotunityCard";
 import Button from "src/components/Button/Button";
 
 interface OpotunitySectionProps {

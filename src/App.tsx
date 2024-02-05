@@ -1,5 +1,5 @@
 import * as React from "react";
-import CheckBox from "./components/CheckBox";
+// import CheckBox from "./components/CheckBox";
 import NavBar from "./components/NavBar";
 import PromoSection from "./components/Layout/PromoSection/PromoSection";
 import ExactlySection from "./components/Layout/ExactlySection/ExactlySection";

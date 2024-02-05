@@ -92,7 +92,7 @@ const Modal = ({ setOpenModal, openModal }: ModalProps) => {
             <div className="agreementBlock_text">
               <label htmlFor="check">Я согласен на обработку моих</label>
               <div>
-                <a href="#">персональных данных</a>
+                <a href="/personal">персональных данных</a>
               </div>
             </div>
           </div>
