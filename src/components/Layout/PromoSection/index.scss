@@ -1,12 +1,46 @@
 .promo {
   position: relative;
+  // display: flex;
+  // margin-top: 120px;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+.slider {
   display: flex;
-  margin-top: 120px;
+}
+.arrowLeft {
+  position: absolute;
+  left: -150px;
+  top: calc(100% - 540px);
+  height: 380px;
+  // height: 100%;
+  font-size: 80px;
+  cursor: pointer;
+  color: #6e6c72;
+}
+.arrowLeft:hover {
+  border: solid 1px #6e6c72;
+  border-radius: 10px;
+}
+
+.arrowRight {
+  position: absolute;
+  right: -240px;
+  top: calc(100% - 540px);
+  height: 380px;
+  font-size: 80px;
+  cursor: pointer;
+  color: #6e6c72;
+}
+.arrowRight:hover {
+  border: solid 1px #6e6c72;
+  border-radius: 10px;
 }
 .promo__img {
   width: 720px;
   height: 375px;
-  margin-bottom: 162px;
+  // margin-bottom: 162px;
 }
 .promo__textBlock {
   width: 435px;
