@@ -10,12 +10,26 @@
 }
 .field_slider {
   overflow: hidden;
+  display: flex;
 }
+
 .slider {
   display: flex;
   // transform: translateX(-100%);
+  // display: none;
   transition: transform 0.8s ease-in-out;
 }
+
+.slider.current {
+  transform: translateX(0);
+}
+.slider.next {
+  transform: translateX(-100%);
+}
+.slider.prev {
+  transform: translateX(100%);
+}
+
 .arrowLeft {
   position: absolute;
   left: -150px;
