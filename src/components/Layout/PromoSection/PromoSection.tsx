@@ -30,28 +30,30 @@ const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
         className="arrowLeft"
         onClick={() => setActiveSlide((prev) => Number(prev) - 1)}
       />
-      <div className="slider">
-        <div className="promo__textBlock">
-          <h1 className="promo__title">
-            Ed Space
-            <br />
-            {/* <br /> Ваши знания <br />и экспертность обретут здесь форму */}
-            {CarouserData[activeSlide]?.title}
-          </h1>
-          <p className="promo__description">
-            {/* Мощный инструмент для организации обучения. Ваши ученики будут в
+      <div className="field_slider">
+        <div className="slider">
+          <div className="promo__textBlock">
+            <h1 className="promo__title">
+              Ed Space
+              <br />
+              {/* <br /> Ваши знания <br />и экспертность обретут здесь форму */}
+              {CarouserData[activeSlide]?.title}
+            </h1>
+            <p className="promo__description">
+              {/* Мощный инструмент для организации обучения. Ваши ученики будут в
             восторге! */}
-            {CarouserData[activeSlide]?.content}
-          </p>
+              {CarouserData[activeSlide]?.content}
+            </p>
+          </div>
+          <div>
+            <img
+              className="promo__img"
+              src={`/assets/img/${CarouserData[activeSlide]?.img}`}
+              alt=""
+            />
+          </div>
+          {/* <IoIosArrowForward /> */}
         </div>
-        <div>
-          <img
-            className="promo__img"
-            src={`/assets/img/${CarouserData[activeSlide]?.img}`}
-            alt=""
-          />
-        </div>
-        {/* <IoIosArrowForward /> */}
       </div>
       <div>
         <Button
