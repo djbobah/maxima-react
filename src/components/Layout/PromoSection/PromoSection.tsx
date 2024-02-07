@@ -15,15 +15,14 @@ const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
   React.useEffect(() => {
-    if (activeSlide > CarouserData.length - 1) {
+    if (activeSlide > CarouserData.length) {
       setActiveSlide(0);
-    }
-    if (activeSlide < 0) {
-      setActiveSlide(CarouserData.length - 1);
+    } else if (activeSlide < 0) {
+      setActiveSlide(CarouserData.length);
     }
   }, [activeSlide]);
 
-  console.log(CarouserData.length);
+  console.log(activeSlide);
   return (
     <section className="promo container">
       <IoIosArrowBack
@@ -36,12 +35,30 @@ const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
             item: { title: string; content: string; img: string },
             index: number
           ) => {
-            let slide = "current";
+            let slide = "next";
+
             if (activeSlide === index) {
               slide = "current";
             }
+            if (activeSlide > index) {
+              slide = "next";
+            }
+            if (activeSlide < index) {
+              slide = "prev";
+            }
+            console.log(
+              "slide",
+              slide,
+              "activeSlide",
+              activeSlide,
+              "index",
+              index
+            );
+
             return (
               <div className={`slider ${slide}`} key={index}>
+                {" "}
+                {/*  */}
                 <div className="promo__textBlock">
                   <h1 className="promo__title">
                     Ed Space
