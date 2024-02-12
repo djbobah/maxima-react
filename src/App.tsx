@@ -1,5 +1,5 @@
 import * as React from "react";
-import CheckBox from "./components/CheckBox";
+// import CheckBox from "./components/CheckBox";
 import NavBar from "./components/NavBar";
 import PromoSection from "./components/Layout/PromoSection/PromoSection";
 import ExactlySection from "./components/Layout/ExactlySection/ExactlySection";
@@ -10,15 +10,23 @@ import pic2 from "./assets/img/exactly2.png";
 import OpotunitySection from "./components/Layout/OpotunitySection/OpotunitySection";
 import opotunityContent from "./assets/data/opportunitiesData.json";
 import OpotunityCard from "./components/OpotunityCard/OpotunityCard";
+import { useState } from "react";
+import Modal from "./components/Modal/Modal";
 // import { getRGB, randNumber, getArray } from "./utils/functions.ts";
 
 const App = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <NavBar />
       <main className="main">
-        <PromoSection />
-        <ExactlySection name="Точно подойдет для:" count={2}>
+        <PromoSection setOpenModal={setOpenModal} />
+        <ExactlySection
+          name="Точно подойдет для:"
+          count={2}
+          setOpenModal={setOpenModal}
+        >
           {textContent
             .filter((item: { block: string }) => item.block === "bottom")
             .map((item: { title: string; content: string }, i: number) => (
@@ -34,6 +42,7 @@ const App = () => {
           name="Возможности Ed Space"
           description="Поможем перенести корпоративную академию, базу знаний, учебные курсы, настроим систему мотивации обучения, круглосуточная поддержка."
           count={3}
+          setOpenModal={setOpenModal}
         >
           {opotunityContent.map(
             (item: { title: string; text: string; img: string }, i: number) => (
@@ -58,6 +67,7 @@ const App = () => {
         <CheckBox title="Сообщества" />
         <CheckBox title="Любое количество уроков и учебных программ" />
       </div> */}
+      {<Modal openModal={openModal} setOpenModal={setOpenModal} />}
     </>
   );
 };

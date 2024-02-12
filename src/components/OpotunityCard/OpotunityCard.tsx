@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./opotunityCard.scss";
-import pic from "../../assets/img/opportunities1.svg";
+// import pic from "../../assets/img/opportunities1.svg";
 
 interface OpotunityCardProps {
   name: string;

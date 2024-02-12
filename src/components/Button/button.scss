@@ -1,8 +1,10 @@
 .button {
-  width: 245px;
+  // width: 245px;
+  width: fit-content;
   height: 55px;
   font-size: 14px;
   border-radius: 40px;
+  padding: 0 30px;
   /* gradient */
   background: linear-gradient(
     130deg,
@@ -14,6 +16,7 @@
   text-transform: uppercase;
   color: rgb(47, 42, 55);
   cursor: pointer;
+  box-sizing: border-box;
 }
 .button:hover {
   border: solid 1px green;
