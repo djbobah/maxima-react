@@ -6,11 +6,11 @@
   // overflow: hidden;
 }
 
-.title {
-  margin-top: 80px;
-  font-size: 40px;
-  color: rgb(47, 42, 55);
-}
+// .title {
+//   margin-top: 80px;
+//   font-size: 40px;
+//   color: rgb(47, 42, 55);
+// }
 
 .description {
   /* Text */
@@ -20,10 +20,12 @@
   width: 770px;
   text-align: center;
   margin-top: 20px;
+  // margin-bottom: 0;
 }
 .card__block {
   margin-top: 80px;
   display: grid;
+
   gap: 30px;
   margin-bottom: 80px;
 }

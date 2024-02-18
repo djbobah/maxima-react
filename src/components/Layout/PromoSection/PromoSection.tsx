@@ -1,5 +1,5 @@
 import * as React from "react";
-import MainImg from "../../../assets/img/MainImg.png";
+// import MainImg from "../../../assets/img/MainImg.png";
 import "./index.scss";
 import Button from "src/components/Button/Button";
 import CarouserData from "../../../assets/data/carouselData.json";

@@ -2,6 +2,9 @@ import * as React from "react";
 import "./opotunitySection.scss";
 // import OpotunityCard from "src/components/OpotunityCard/OpotunityCard";
 import Button from "src/components/Button/Button";
+import { Typography } from "antd";
+
+const { Paragraph, Title } = Typography;
 
 interface OpotunitySectionProps {
   name: string;
@@ -40,8 +43,24 @@ const OpotunitySection = ({
   };
   return (
     <section className="container opotunitySection">
-      {name && <h2 className="title">{name}</h2>}
-      {description && <p className="description">{description}</p>}
+      {name && (
+        <Title
+          level={2}
+          className="title"
+          style={{
+            color: "rgb(47, 42, 55)",
+            fontSize: "40px",
+            marginTop: "80px",
+          }}
+        >
+          {name}
+        </Title>
+      )}
+      {description && (
+        <Paragraph style={{ marginBottom: 0 }} className="description">
+          {description}
+        </Paragraph>
+      )}
       <div className="card__block" style={style}>
         {children}
       </div>
