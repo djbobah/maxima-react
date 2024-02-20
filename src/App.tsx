@@ -12,6 +12,8 @@ import opotunityContent from "./assets/data/opportunitiesData.json";
 import OpotunityCard from "./components/OpotunityCard/OpotunityCard";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
+import Footer from "./components/Layout/Footer/Footer";
+import ContactsSection from "./components/Layout/ContactsSection/ContactsSection";
 // import { getRGB, randNumber, getArray } from "./utils/functions.ts";
 
 const App = () => {
@@ -67,6 +69,8 @@ const App = () => {
         <CheckBox title="Сообщества" />
         <CheckBox title="Любое количество уроков и учебных программ" />
       </div> */}
+      <ContactsSection />
+      <Footer />
       {<Modal openModal={openModal} setOpenModal={setOpenModal} />}
     </>
   );
