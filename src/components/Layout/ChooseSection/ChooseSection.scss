@@ -1,0 +1,16 @@
+.choose_section {
+  display: flex;
+  justify-content: center;
+}
+
+.choose {
+  // background-image: ;
+  background: center / contain no-repeat
+    url("../../../assets/img/ChooseBackground.png");
+  height: 100rem;
+  width: 86rem;
+  position: relative;
+  // // top: -100px;
+  left: -0.5rem;
+  top: -7.4rem;
+}

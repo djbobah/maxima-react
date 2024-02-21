@@ -9,11 +9,14 @@ import pic1 from "./assets/img/exactly1.png";
 import pic2 from "./assets/img/exactly2.png";
 import OpotunitySection from "./components/Layout/OpotunitySection/OpotunitySection";
 import opotunityContent from "./assets/data/opportunitiesData.json";
+import chooseData from "./assets/data/chooseData.json";
 import OpotunityCard from "./components/OpotunityCard/OpotunityCard";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import Footer from "./components/Layout/Footer/Footer";
 import ContactsSection from "./components/Layout/ContactsSection/ContactsSection";
+import ChooseSection from "./components/Layout/ChooseSection/ChooseSection";
+import CheckBox from "./components/CheckBox";
 // import { getRGB, randNumber, getArray } from "./utils/functions.ts";
 
 const App = () => {
@@ -69,6 +72,11 @@ const App = () => {
         <CheckBox title="Сообщества" />
         <CheckBox title="Любое количество уроков и учебных программ" />
       </div> */}
+      <ChooseSection title="Выбирайте Ed Space сегодня и вы получите">
+        {chooseData.map((item, i) => (
+          <CheckBox key={i} title={item.title} />
+        ))}
+      </ChooseSection>
       <ContactsSection />
       <Footer />
       {<Modal openModal={openModal} setOpenModal={setOpenModal} />}

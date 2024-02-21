@@ -1,14 +1,20 @@
+.contacts__section {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  height: 370px;
+  // width: max-content;
+  // margin-top: 100px;
+}
 .contacts {
   display: flex;
   justify-content: space-between;
-  height: 270px;
-  margin-top: 100px;
+  width: 100%;
   & img {
     width: 100px;
     height: 100px;
   }
 }
-
 .contacts__data {
   display: flex;
   gap: 70px;
