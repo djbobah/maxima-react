@@ -7,10 +7,11 @@ import Button from "../Button/Button";
 
 interface ModalProps {
   setOpenModal: (a: boolean) => void;
+  setDisableButton: (a: boolean) => void;
   openModal: boolean;
 }
 
-const Modal = ({ setOpenModal, openModal }: ModalProps) => {
+const Modal = ({ setOpenModal, openModal, setDisableButton }: ModalProps) => {
   const [name, setName] = useState("");
   const [organization, setOrganization] = useState("");
   const [position, setPosition] = useState("");
@@ -28,7 +29,7 @@ const Modal = ({ setOpenModal, openModal }: ModalProps) => {
     setAgreement(false);
   };
 
-  const handler = (e) => {
+  const handler = () => {
     const data = {
       name,
       organization,
@@ -38,6 +39,7 @@ const Modal = ({ setOpenModal, openModal }: ModalProps) => {
       agreement,
     };
     console.log(data);
+    setDisableButton(true);
     closeHandler();
   };
 
@@ -97,7 +99,7 @@ const Modal = ({ setOpenModal, openModal }: ModalProps) => {
             </div>
           </div>
 
-          <Button title="Отправить" onClick={handler} />
+          <Button title="Отправить" onClick={handler} disabled={!agreement} />
         </div>
       </div>
     </div>

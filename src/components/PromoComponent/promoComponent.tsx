@@ -4,9 +4,13 @@ import "./promoComponent.scss";
 
 interface IpromoComponentProps {
   setOpenModal: (a: boolean) => void;
+  disableButton: boolean;
 }
 
-const PromoComponent = ({ setOpenModal }: IpromoComponentProps) => {
+const PromoComponent = ({
+  setOpenModal,
+  disableButton,
+}: IpromoComponentProps) => {
   return (
     <div className="promo__component container">
       <h3 className="promoComponent__title">Запустите свою онлайн-школу</h3>
@@ -23,6 +27,7 @@ const PromoComponent = ({ setOpenModal }: IpromoComponentProps) => {
         <Button
           title="попробовать бесплатно"
           onClick={() => setOpenModal(true)}
+          disabled={disableButton}
         />
       </div>
     </div>

@@ -21,6 +21,7 @@ interface OpotunitySectionProps {
     | null
     | undefined;
   setOpenModal: (a: boolean) => void;
+  disableButton: boolean;
 }
 
 const OpotunitySection = ({
@@ -30,6 +31,7 @@ const OpotunitySection = ({
   size,
   children,
   setOpenModal,
+  disableButton,
 }: OpotunitySectionProps) => {
   // console.log(count);
 
@@ -68,6 +70,7 @@ const OpotunitySection = ({
         title="попробовать бесплатно"
         style={styleButton}
         onClick={() => setOpenModal(true)}
+        disabled={disableButton}
       />
       <div className="opotunity__shape"></div>
       <div className="opotunity__shape2"></div>

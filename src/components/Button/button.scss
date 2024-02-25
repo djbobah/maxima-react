@@ -21,3 +21,14 @@
 .button:hover {
   border: solid 1px green;
 }
+.button:disabled {
+  background: linear-gradient(
+    130deg,
+    rgb(189, 191, 190) 13.336%,
+    rgb(104, 105, 104) 129.861%
+  );
+  cursor: auto;
+  &.button:hover {
+    border: none;
+  }
+}

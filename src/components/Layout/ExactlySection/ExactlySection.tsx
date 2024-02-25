@@ -13,6 +13,7 @@ interface ExactlySectionProps {
     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
     | Iterable<React.ReactNode>;
   setOpenModal: (a: boolean) => void;
+  disableButton: boolean;
 }
 
 const ExactlySection = ({
@@ -21,6 +22,7 @@ const ExactlySection = ({
   size,
   children,
   setOpenModal,
+  disableButton,
 }: ExactlySectionProps) => {
   const style = {
     gridTemplateColumns: `repeat(${count || 1}, ${size || "1fr"})`,
@@ -41,6 +43,7 @@ const ExactlySection = ({
         title="попробовать бесплатно"
         style={styleButton}
         onClick={() => setOpenModal(true)}
+        disabled={disableButton}
       />
     </section>
   );

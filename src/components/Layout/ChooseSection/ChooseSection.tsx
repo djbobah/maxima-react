@@ -1,5 +1,4 @@
 import * as React from "react";
-import backgroundImg from "../../../assets/img/ChooseBackground3.png";
 import "./ChooseSection.scss";
 import PromoComponent from "src/components/PromoComponent/promoComponent";
 import ExectlyComponent from "src/components/ExectlyComponent/exectlyComponent";
@@ -17,11 +16,13 @@ interface ChooseSectionProps {
     | null
     | undefined;
   setOpenModal: (a: boolean) => void;
+  disableButton: boolean;
 }
 
 export default function ChooseSection({
   title,
   setOpenModal,
+  disableButton,
   children,
 }: ChooseSectionProps) {
   return (
@@ -31,7 +32,10 @@ export default function ChooseSection({
         <div className="choose__checkboxes">{children}</div>
         {/* <PromoComponent /> */}
       </div>
-      <PromoComponent setOpenModal={setOpenModal} />
+      <PromoComponent
+        setOpenModal={setOpenModal}
+        disableButton={disableButton}
+      />
       <ExectlyComponent />
     </div>
   );

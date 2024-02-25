@@ -8,9 +8,10 @@ import { IoIosArrowForward } from "react-icons/io";
 
 interface PromoSectionProps {
   setOpenModal: (a: boolean) => void;
+  disableButton: boolean;
 }
 
-const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
+const PromoSection = ({ setOpenModal, disableButton }: PromoSectionProps) => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
   React.useEffect(() => {
@@ -81,6 +82,7 @@ const PromoSection = ({ setOpenModal }: PromoSectionProps) => {
         <Button
           title="попробовать бесплатно"
           onClick={() => setOpenModal(true)}
+          disabled={disableButton}
         />
       </div>
       <IoIosArrowForward
