@@ -6,6 +6,7 @@ import { Layout } from "antd";
 
 import type { MenuProps } from "antd";
 import { Menu, Select } from "antd";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const items: MenuProps["items"] = [
@@ -36,7 +37,9 @@ const NavBar: React.FC = () => {
     <Layout>
       <header className={` ${styles.header}`}>
         <div className={`container ${styles.nav}`}>
-          <img src={logo} className={styles.logo} alt="Logo" />
+          <Link to="/">
+            <img src={logo} className={styles.logo} alt="Logo" />
+          </Link>
           <Menu
             onClick={onClick}
             selectedKeys={[current]}

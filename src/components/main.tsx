@@ -52,9 +52,12 @@ const Main = () => {
       >
         {opotunityContent.map(
           (item: { title: string; text: string; img: string }, i: number) => (
-            <Link to={`/page/` + item.title} style={{ textDecoration: "none" }}>
+            <Link
+              key={i}
+              to={`/page/` + item.title}
+              style={{ textDecoration: "none" }}
+            >
               <OpotunityCard
-                key={i}
                 name={item.title}
                 text={item.text}
                 pic={`/assets/img/${item.img}`}

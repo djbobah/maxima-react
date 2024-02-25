@@ -30,31 +30,6 @@ const PromoSection = ({ setOpenModal, disableButton }: PromoSectionProps) => {
         onClick={() => setActiveSlide((prev) => Number(prev) - 1)}
       />
       <div className="field_slider">
-        {/* {CarouserData.map(
-          (
-            item: { title: string; content: string; img: string },
-            index: number
-          ) => {
-            let slide = "next";
-
-            if (activeSlide === index) {
-              slide = "current";
-            }
-            if (activeSlide > index) {
-              slide = "next";
-            }
-            if (activeSlide < index) {
-              slide = "prev";
-            }
-            console.log(
-              "slide",
-              slide,
-              "activeSlide",
-              activeSlide,
-              "index",
-              index
-            ); */}
-        {/* return ( */}
         <div className={`slider `}>
           <div className="promo__textBlock">
             <h1 className="promo__title">
