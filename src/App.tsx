@@ -72,10 +72,15 @@ const App = () => {
         <CheckBox title="Сообщества" />
         <CheckBox title="Любое количество уроков и учебных программ" />
       </div> */}
-      <ChooseSection title="Выбирайте Ed Space сегодня и вы получите">
-        {chooseData.map((item, i) => (
-          <CheckBox key={i} title={item.title} />
-        ))}
+      <ChooseSection
+        title="Выбирайте Ed Space сегодня и вы получите"
+        setOpenModal={setOpenModal}
+      >
+        {chooseData.map(
+          (item: { title: string }, i: React.Key | null | undefined) => (
+            <CheckBox key={i} title={item.title} />
+          )
+        )}
       </ChooseSection>
       <ContactsSection />
       <Footer />
