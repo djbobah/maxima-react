@@ -7,6 +7,7 @@ import { Layout } from "antd";
 import type { MenuProps } from "antd";
 import { Menu, Select } from "antd";
 import { Link } from "react-router-dom";
+import Button from "./Button/Button";
 const { Option } = Select;
 
 const items: MenuProps["items"] = [
@@ -23,8 +24,10 @@ const items: MenuProps["items"] = [
     key: "contacts",
   },
 ];
-
-const NavBar: React.FC = () => {
+type TWeatherDrawer = {
+  openWeatherDrawer: (a: boolean) => void;
+};
+const NavBar: React.FC<TWeatherDrawer> = ({ openWeatherDrawer }) => {
   const [current, setCurrent] = React.useState("opotunites");
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
@@ -53,6 +56,7 @@ const NavBar: React.FC = () => {
               justifyContent: "space-evenly",
             }}
           />
+          <Button title="Информация о погоде" onClick={openWeatherDrawer} />
           <Select
             defaultValue="ru"
             style={{ width: 70 }}
