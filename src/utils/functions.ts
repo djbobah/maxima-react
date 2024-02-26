@@ -14,6 +14,23 @@ export const getArray = (n) => {
   return arr;
 };
 
+// type TGetWeather={
+//   town:string
+// }
+// type TgetWeather = (a: string) => void;
+export async function getWeather(town: string) {
+  const API_KEY = "306e09cb7cf278985a4d29a8e587a676";
+  let weather = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`
+  ).then((response) => response.json());
+  // .then((data) => {
+  //   data.send(200);
+  //   // console.log(data);
+  // });
+  console.log(weather);
+  return weather;
+}
+
 class Counter {
   val: number;
   constructor() {

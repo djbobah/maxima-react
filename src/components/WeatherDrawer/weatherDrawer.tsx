@@ -2,6 +2,8 @@ import * as React from "react";
 import { Button, Drawer, Space } from "antd";
 import type { DrawerProps } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
+import "./weatherDrawer.scss";
+import { getWeather } from "src/utils/functions";
 
 type TWeatherDrawer = {
   open: boolean;
@@ -14,7 +16,17 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   setOpen,
   onClose,
 }) => {
-  // const [open, setOpen] = React.useState(false);
+  const [towns, setTowns] = React.useState(["Moscow", "Saratov", "Volgograd"]);
+  const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
+  // let townsWeather: Object[] = [];
+  React.useEffect(() => {
+    towns.map((town, i) => console.log(i, getWeather(town)));
+  }, []);
+  const sss = getWeather("Moscow").then((res) => res);
+  console.log(sss);
+  console.log(weatherTowns);
+  // setWeatherTowns((prev) => [...prev, getWeather(town)])
+
   // const [size, setSize] = React.useState<DrawerProps["size"]>();
 
   // const showDefaultDrawer = () => {
@@ -49,17 +61,20 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
           </Space>
         }
         footer={
-          // <Space>
-          // {/* <Button onClick={onClose}>Cancel</Button> */}
-          <CopyrightOutlined />
-          // <Button type="primary" onClick={onClose}>
-          //   Закрыть
-          // </Button>
+          <>
+            <CopyrightOutlined />
+            {`  https://openweathermap.org/`}
+          </>
         }
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div className="content">
+          <div className="weather__item">1</div>
+          <div className="weather__item"></div>
+          <div className="weather__item">3</div>
+          <div className="weather__item"></div>
+          <div className="weather__item"></div>
+          <div className="weather__item"></div>
+        </div>
       </Drawer>
     </>
   );

@@ -1,0 +1,11 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.weather__item {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+}
