@@ -30,7 +30,10 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   const loadWeather = async (townRus: string) => {
     let townObj = await getWeather(townRus);
     townObj = { ...townObj, nameRUS: townRus };
+    // if (!weatherTowns.some((item) => item.nameRUS === townRus)) {
     setWeatherTowns((prev) => [...prev, townObj]);
+    // }
+    console.log(weatherTowns);
   };
   React.useEffect(() => {
     towns.map((town, i) => loadWeather(town));
@@ -87,12 +90,6 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
         </Space.Compact>
 
         <div className="content">
-          {/* <div className="weather__item">1</div>
-          <div className="weather__item"></div>
-          <div className="weather__item">3</div>
-          <div className="weather__item"></div>
-          <div className="weather__item"></div>
-          <div className="weather__item"></div> */}
           {weatherTowns.map((item, i) => (
             <CardWeather key={i} town={item} />
           ))}

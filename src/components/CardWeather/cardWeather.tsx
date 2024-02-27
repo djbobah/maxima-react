@@ -6,7 +6,7 @@ const { Text } = Typography;
 const { Meta } = Card;
 
 export default function CardWeather({ town }) {
-  console.log(town.weather[0].icon);
+  // console.log(town.weather[0].icon);
 
   //https://api.unsplash.com/search/photos?page=1&query=office&client_id=HDZ3h9US_THNtSh9fk1Z04tHPVytkLtRTQDdV_rD4gw
   // https:
