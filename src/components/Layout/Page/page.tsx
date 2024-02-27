@@ -3,7 +3,7 @@ import "./page.scss";
 import { useParams } from "react-router";
 import ExectlyComponent from "src/components/ExectlyComponent/exectlyComponent";
 import pageData from "../../../assets/data/pagesData.json";
-
+import ScrollToTop from "react-scroll-to-top";
 import { randNumber } from "../../../utils/functions";
 
 const Page = () => {
@@ -14,6 +14,7 @@ const Page = () => {
   const pic = randNumber(4, 1);
   return (
     <div>
+      <ScrollToTop smooth />
       <div className="page container">
         <div className="promo__textBlock">
           <h1 className="promo__title">

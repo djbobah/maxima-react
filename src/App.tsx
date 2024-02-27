@@ -5,6 +5,7 @@ import Main from "./components/main";
 import Page from "./components/Layout/Page/page";
 import { Routes, Route } from "react-router-dom";
 import WeatherDrawer from "./components/WeatherDrawer/weatherDrawer";
+import ScrollToTop from "react-scroll-to-top";
 
 const App = () => {
   const [open, setOpen] = React.useState(false);
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <>
       <NavBar openWeatherDrawer={showDrawer} />
+      <ScrollToTop smooth />
       <WeatherDrawer open={open} setOpen={showDrawer} onClose={onCloseDrawer} />
       <Routes>
         <Route path="/" element={<Main />} />
