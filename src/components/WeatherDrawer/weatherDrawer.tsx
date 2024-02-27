@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Drawer, Space } from "antd";
+import { Button, Drawer, Input, Space } from "antd";
 import type { DrawerProps } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
@@ -24,7 +24,7 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
     "Каменск-Шахтинский",
     "Калитвенская",
   ]);
-
+  const [inputTown, setInputTown] = React.useState("");
   const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
 
   const loadWeather = async (townRus: string) => {
@@ -34,10 +34,17 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   };
   React.useEffect(() => {
     towns.map((town, i) => loadWeather(town));
-  }, []);
+  }, [towns]);
 
-  console.log("weatherTowns", weatherTowns);
-
+  // console.log("weatherTowns", weatherTowns);
+  const handleInputChange = ({ target }) => {
+    setInputTown(target.value);
+  };
+  const handleClickAddTown = (town: string) => {
+    const newTowns = [...towns, town];
+    setTowns(newTowns);
+  };
+  console.log(towns);
   return (
     <>
       <Drawer
@@ -58,10 +65,27 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
         footer={
           <>
             <CopyrightOutlined />
-            {`  https://openweathermap.org/`}
+            {`  https://openweathermap.org`}
           </>
         }
       >
+        <Space.Compact style={{ width: "100%", marginBottom: "20px" }}>
+          <Input
+            placeholder="Введите город для добавления"
+            // value={inputTown}
+            name="inputTown"
+            onChange={handleInputChange}
+          />
+          {/* onClick={handleClickAddTown} */}
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => handleClickAddTown(inputTown)}
+          >
+            +
+          </Button>
+        </Space.Compact>
+
         <div className="content">
           {/* <div className="weather__item">1</div>
           <div className="weather__item"></div>
