@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const randNumber = function (max = 100, min = 0) {
   return Math.floor(Math.random() * (max - min) + min);
 };
@@ -18,17 +20,29 @@ export const getArray = (n) => {
 //   town:string
 // }
 // type TgetWeather = (a: string) => void;
+
+// const ProductService = {
+//   getProducts: async () => {
+//     const { data } = await axios({
+//       method: "get",
+//       url: "http://localhost:8081/products",
+//     });
+//     return data;
+//   },
+// };
+
+// export const getWeather2={
+
+// }
+
 export async function getWeather(town: string) {
   const API_KEY = "306e09cb7cf278985a4d29a8e587a676";
-  let weather = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`
-  ).then((response) => response.json());
-  // .then((data) => {
-  //   data.send(200);
-  //   // console.log(data);
-  // });
-  console.log(weather);
-  return weather;
+  const { data } = await axios({
+    method: "get",
+    url: `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`,
+  });
+
+  return data;
 }
 
 class Counter {

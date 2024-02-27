@@ -22,7 +22,6 @@ const PromoSection = ({ setOpenModal, disableButton }: PromoSectionProps) => {
     }
   }, [activeSlide]);
 
-  console.log(activeSlide);
   return (
     <section className="promo container">
       <IoIosArrowBack

@@ -4,6 +4,7 @@ import type { DrawerProps } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
 import { getWeather } from "src/utils/functions";
+import CardWeather from "../CardWeather/cardWeather";
 
 type TWeatherDrawer = {
   open: boolean;
@@ -16,32 +17,26 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   setOpen,
   onClose,
 }) => {
-  const [towns, setTowns] = React.useState(["Moscow", "Saratov", "Volgograd"]);
+  const [towns, setTowns] = React.useState([
+    "Москва",
+    "Саратов",
+    "Ростов-на-Дону",
+    "Каменск-Шахтинский",
+    "Калитвенская",
+  ]);
+
   const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
-  // let townsWeather: Object[] = [];
+
+  const loadWeather = async (townRus: string) => {
+    let townObj = await getWeather(townRus);
+    townObj = { ...townObj, nameRUS: townRus };
+    setWeatherTowns((prev) => [...prev, townObj]);
+  };
   React.useEffect(() => {
-    towns.map((town, i) => console.log(i, getWeather(town)));
+    towns.map((town, i) => loadWeather(town));
   }, []);
-  const sss = getWeather("Moscow").then((res) => res);
-  console.log(sss);
-  console.log(weatherTowns);
-  // setWeatherTowns((prev) => [...prev, getWeather(town)])
 
-  // const [size, setSize] = React.useState<DrawerProps["size"]>();
-
-  // const showDefaultDrawer = () => {
-  //   setSize("default");
-  //   setOpen(true);
-  // };
-
-  // const showLargeDrawer = () => {
-  //   // setSize("large");
-  //   setOpen(true);
-  // };
-
-  // const onClose = () => {
-  //   setOpen(false);
-  // };
+  console.log("weatherTowns", weatherTowns);
 
   return (
     <>
@@ -68,12 +63,15 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
         }
       >
         <div className="content">
-          <div className="weather__item">1</div>
+          {/* <div className="weather__item">1</div>
           <div className="weather__item"></div>
           <div className="weather__item">3</div>
           <div className="weather__item"></div>
           <div className="weather__item"></div>
-          <div className="weather__item"></div>
+          <div className="weather__item"></div> */}
+          {weatherTowns.map((item, i) => (
+            <CardWeather key={i} town={item} />
+          ))}
         </div>
       </Drawer>
     </>
