@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 
 export const randNumber = function (max = 100, min = 0) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -41,7 +42,7 @@ export async function getWeather(town: string) {
     method: "get",
     url: `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`,
   });
-
+  console.log(data);
   return data;
 }
 

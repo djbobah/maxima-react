@@ -5,6 +5,9 @@ import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
 import { getWeather } from "src/utils/functions";
 import CardWeather from "../CardWeather/cardWeather";
+import { useDispatch, useSelector } from "react-redux";
+import { addTown } from "../../store/weather";
+import { useAppDispatch, useAppSelector } from "src/utils/hooks";
 
 type TWeatherDrawer = {
   open: boolean;
@@ -17,37 +20,39 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   setOpen,
   onClose,
 }) => {
-  const [towns, setTowns] = React.useState([
-    "Москва",
-    "Саратов",
-    "Ростов-на-Дону",
-    "Каменск-Шахтинский",
-    "Калитвенская",
-  ]);
   const [inputTown, setInputTown] = React.useState("");
   const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
 
-  const loadWeather = async (townRus: string) => {
-    let townObj = await getWeather(townRus);
-    townObj = { ...townObj, nameRUS: townRus };
-    // if (!weatherTowns.some((item) => item.nameRUS === townRus)) {
-    setWeatherTowns((prev) => [...prev, townObj]);
-    // }
-    console.log(weatherTowns);
-  };
-  React.useEffect(() => {
-    towns.map((town, i) => loadWeather(town));
-  }, [towns]);
+  const towns = useAppSelector((state) => state.towns.data.towns);
+  const dispatch = useAppDispatch();
 
-  // console.log("weatherTowns", weatherTowns);
+  getWeather("Морозовск");
+  // setWeatherTowns((prev) => [...prev, res])
+
+  // ttt();
+  // console.log(townObj);
+  // const loadWeather = async (townRus: string) => {
+  //   let townObj = await getWeather(townRus);
+  //   townObj = { ...townObj, nameRUS: townRus };
+  //   // if (!weatherTowns.some((item) => item.nameRUS === townRus)) {
+  //   setWeatherTowns((prev) => [...prev, townObj]);
+  //   // }
+  //   console.log(weatherTowns);
+  // };
+
+  // React.useEffect(() => {
+  //   towns.map((town, i) => loadWeather(town));
+  // }, [towns]);
+
   const handleInputChange = ({ target }) => {
     setInputTown(target.value);
   };
+
   const handleClickAddTown = (town: string) => {
-    const newTowns = [...towns, town];
-    setTowns(newTowns);
+    dispatch(addTown(town));
+    setInputTown("");
   };
-  console.log(towns);
+
   return (
     <>
       <Drawer

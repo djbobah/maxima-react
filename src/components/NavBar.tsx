@@ -28,12 +28,28 @@ type TWeatherDrawer = {
   openWeatherDrawer: (a: boolean) => void;
 };
 const NavBar: React.FC<TWeatherDrawer> = ({ openWeatherDrawer }) => {
-  const [current, setCurrent] = React.useState("opotunites");
+  const [current, setCurrent] = React.useState("");
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
+    if (e.key === "opotunites") {
+      window.scrollTo({
+        top: 1270,
+        behavior: "smooth",
+      });
+    } else if (e.key === "cost") {
+      window.scrollTo({
+        top: 3100,
+        behavior: "smooth",
+      });
+    } else if (e.key === "contacts") {
+      window.scrollTo({
+        top: 3650,
+        behavior: "smooth",
+      });
+    }
   };
-  function handleChange(value) {
+  function handleChange(value: string) {
     console.log(`Selected language: ${value}`);
   }
   return (

@@ -24,13 +24,13 @@ export default function CardWeather({ town }) {
           <Text>{(Number(town.main.temp) - 273.15).toFixed(1)} ºC </Text>
         ) : (
           <Text style={{ color: "#1890ff" }}>
-            {(Number(town.main.temp) - 273.15).toFixed(1)} ºC{" "}
+            {(Number(town.main.temp) - 273.15).toFixed(1)} º
           </Text>
         )}
       </Flex>
       <Flex justify="space-between">
         <span>Ощущается</span>
-        {Number(town.main.temp) - 273.15 >= 0 ? (
+        {Number(town.main.feels_like) - 273.15 >= 0 ? (
           <Text>{(Number(town.main.feels_like) - 273.15).toFixed(1)} ºC </Text>
         ) : (
           <Text style={{ color: "#1890ff" }}>
