@@ -10,10 +10,11 @@ export default function CardWeather({ town }) {
 
   //https://api.unsplash.com/search/photos?page=1&query=office&client_id=HDZ3h9US_THNtSh9fk1Z04tHPVytkLtRTQDdV_rD4gw
   // https:
+  console.log(town);
   return (
     <Card hoverable style={{}}>
       {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
-      <h2> {town.nameRUS}</h2>
+      <h2> {town?.nameRus}</h2>
       <img
         src={`https://openweathermap.org/img/wn/${town.weather[0].icon}.png`}
         alt="icon weather"

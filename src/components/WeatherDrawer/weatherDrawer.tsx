@@ -6,7 +6,7 @@ import "./weatherDrawer.scss";
 import { getWeather } from "src/utils/functions";
 import CardWeather from "../CardWeather/cardWeather";
 import { useDispatch, useSelector } from "react-redux";
-import { addTown } from "../../store/weather";
+import { addTown, getTownWeather } from "../../store/weather";
 import { useAppDispatch, useAppSelector } from "src/utils/hooks";
 
 type TWeatherDrawer = {
@@ -21,35 +21,21 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   onClose,
 }) => {
   const [inputTown, setInputTown] = React.useState("");
-  const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
+  // const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
 
-  const towns = useAppSelector((state) => state.towns.data.towns);
+  const weatherTowns = useAppSelector((state) => state.towns.townsWeather);
+
   const dispatch = useAppDispatch();
-
-  getWeather("Морозовск");
-  // setWeatherTowns((prev) => [...prev, res])
-
-  // ttt();
-  // console.log(townObj);
-  // const loadWeather = async (townRus: string) => {
-  //   let townObj = await getWeather(townRus);
-  //   townObj = { ...townObj, nameRUS: townRus };
-  //   // if (!weatherTowns.some((item) => item.nameRUS === townRus)) {
-  //   setWeatherTowns((prev) => [...prev, townObj]);
-  //   // }
-  //   console.log(weatherTowns);
-  // };
-
-  // React.useEffect(() => {
-  //   towns.map((town, i) => loadWeather(town));
-  // }, [towns]);
 
   const handleInputChange = ({ target }) => {
     setInputTown(target.value);
   };
 
   const handleClickAddTown = (town: string) => {
+    if (town === "") return;
     dispatch(addTown(town));
+    dispatch(getTownWeather(town));
+
     setInputTown("");
   };
 
@@ -95,7 +81,7 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
         </Space.Compact>
 
         <div className="content">
-          {weatherTowns.map((item, i) => (
+          {weatherTowns?.map((item, i) => (
             <CardWeather key={i} town={item} />
           ))}
         </div>
