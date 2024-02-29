@@ -9,7 +9,7 @@ const { Text } = Typography;
 
 export default function CardWeather({ town }) {
   const dispatch = useAppDispatch();
-
+  console.log(town);
   return (
     <>
       {town && (
@@ -44,6 +44,16 @@ export default function CardWeather({ town }) {
             ) : (
               <Text style={{ color: "#1890ff" }}>
                 {(Number(town.main.feels_like) - 273.15).toFixed(1)} ºC{" "}
+              </Text>
+            )}
+          </Flex>
+          <Flex justify="space-between">
+            <span>Ветер</span>
+            {Number(town.wind.speed) <= 10 ? (
+              <Text>{Number(town.wind.speed).toFixed(1)} м/с </Text>
+            ) : (
+              <Text style={{ color: "#1890ff" }}>
+                {Number(town.wind.speed).toFixed(1)} м/с
               </Text>
             )}
           </Flex>
