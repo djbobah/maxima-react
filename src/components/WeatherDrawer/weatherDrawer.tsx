@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Button, Drawer, Input, Space } from "antd";
-import type { DrawerProps } from "antd";
+import { Button, Drawer, Flex, Form, Input, Space } from "antd";
+import { Alert, message } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
 import { getWeather } from "src/utils/functions";
@@ -20,9 +20,11 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   setOpen,
   onClose,
 }) => {
+  // const [messageApi, contextHolder] = message.useMessage();
+  const [error, setError] = React.useState("");
   const [inputTown, setInputTown] = React.useState("");
   // const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
-
+  const towns = useAppSelector((state) => state.towns.towns);
   const weatherTowns = useAppSelector((state) => state.towns.townsWeather);
 
   const dispatch = useAppDispatch();
@@ -32,9 +34,19 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   };
 
   const handleClickAddTown = (town: string) => {
-    if (town === "") return;
-    dispatch(addTown(town));
-    dispatch(getTownWeather(town));
+    // console.log(towns);
+    // console.log("drawers", towns.indexOf(town));
+    if (town !== "" && towns.indexOf(town) === -1) {
+      dispatch(addTown(town));
+      dispatch(getTownWeather(town));
+    } else {
+      <Alert
+        message="Error"
+        description="This is an error message about copywriting."
+        type="error"
+        showIcon
+      />;
+    }
 
     setInputTown("");
   };
@@ -63,22 +75,32 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
           </>
         }
       >
-        <Space.Compact style={{ width: "100%", marginBottom: "20px" }}>
-          <Input
-            placeholder="Введите город для добавления"
-            // value={inputTown}
-            name="inputTown"
-            onChange={handleInputChange}
-          />
-          {/* onClick={handleClickAddTown} */}
-          <Button
-            type="primary"
-            size="large"
-            onClick={() => handleClickAddTown(inputTown)}
-          >
-            +
-          </Button>
-        </Space.Compact>
+        <Form.Item
+          // label="Fail"
+          validateStatus="error"
+          help="Should be combination of numbers & alphabets"
+        >
+          {/* <Space.Compact style={{ width: "100%", marginBottom: "20px" }}> */}
+          <Flex>
+            <Input
+              placeholder="Введите город для добавления"
+              value={inputTown}
+              name="inputTown"
+              onChange={handleInputChange}
+              status="error"
+            />
+            {/* onClick={handleClickAddTown} */}
+            <Button
+              type="primary"
+              size="large"
+              onClick={() => handleClickAddTown(inputTown)}
+            >
+              +
+            </Button>
+          </Flex>
+          {/* </Space.Compact> */}
+          {/* <Input placeholder="unavailable choice" id="error" /> */}
+        </Form.Item>
 
         <div className="content">
           {weatherTowns?.map((item, i) => (

@@ -1,20 +1,24 @@
 import * as React from "react";
 import { Card, Flex, Space, Typography } from "antd";
-
-import { blue } from "@ant-design/colors";
+import { CloseCircleOutlined } from "@ant-design/icons";
+import "./cardWeather.scss";
+import { useAppDispatch } from "src/utils/hooks";
+import { deleteTown } from "src/store/weather";
+// import { blue } from "@ant-design/colors";
 const { Text } = Typography;
-const { Meta } = Card;
 
 export default function CardWeather({ town }) {
-  // console.log(town.weather[0].icon);
+  const dispatch = useAppDispatch();
 
-  //https://api.unsplash.com/search/photos?page=1&query=office&client_id=HDZ3h9US_THNtSh9fk1Z04tHPVytkLtRTQDdV_rD4gw
-  // https:
-  console.log(town);
   return (
-    <Card hoverable style={{}}>
-      {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
+    <Card hoverable style={{ position: "relative" }}>
+      <CloseCircleOutlined
+        className="closeButton"
+        onClick={() => dispatch(deleteTown(town))}
+      />
+
       <h2> {town?.nameRus}</h2>
+
       <img
         src={`https://openweathermap.org/img/wn/${town.weather[0].icon}.png`}
         alt="icon weather"
