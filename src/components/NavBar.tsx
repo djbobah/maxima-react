@@ -30,7 +30,6 @@ type TWeatherDrawer = {
 const NavBar: React.FC<TWeatherDrawer> = ({ openWeatherDrawer }) => {
   const [current, setCurrent] = React.useState("");
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
     if (e.key === "opotunites") {
       window.scrollTo({

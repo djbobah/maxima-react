@@ -38,7 +38,6 @@ const Modal = ({ setOpenModal, openModal, setDisableButton }: ModalProps) => {
       phone,
       agreement,
     };
-    console.log(data);
     setDisableButton(true);
     closeHandler();
   };

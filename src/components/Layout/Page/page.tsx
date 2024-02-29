@@ -9,7 +9,6 @@ const Page = () => {
   const { name } = useParams();
   const filteredData = pageData.filter((item) => item.title.includes(name));
 
-  console.log(filteredData);
   const pic = randNumber(4, 1);
 
   window.scrollTo({

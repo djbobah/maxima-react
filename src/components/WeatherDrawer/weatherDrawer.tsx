@@ -1,12 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from "react";
 import { Button, Drawer, Flex, Form, Input, Space } from "antd";
-import { Alert, message } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
-import { getWeather } from "src/utils/functions";
 import CardWeather from "../CardWeather/cardWeather";
-import { useDispatch, useSelector } from "react-redux";
-import { addTown, getTownWeather } from "../../store/weather";
+import { addTown, getTownWeather, setError } from "../../store/weather";
 import { useAppDispatch, useAppSelector } from "src/utils/hooks";
 
 type TWeatherDrawer = {
@@ -20,32 +18,28 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   setOpen,
   onClose,
 }) => {
-  // const [messageApi, contextHolder] = message.useMessage();
-  const [error, setError] = React.useState("");
   const [inputTown, setInputTown] = React.useState("");
-  // const [weatherTowns, setWeatherTowns] = React.useState<Object[]>([]);
+  const [error, setError] = React.useState("");
+
   const towns = useAppSelector((state) => state.towns.towns);
   const weatherTowns = useAppSelector((state) => state.towns.townsWeather);
+
+  // console.log(error);
 
   const dispatch = useAppDispatch();
 
   const handleInputChange = ({ target }) => {
+    setError("");
     setInputTown(target.value);
   };
 
   const handleClickAddTown = (town: string) => {
-    // console.log(towns);
-    // console.log("drawers", towns.indexOf(town));
-    if (town !== "" && towns.indexOf(town) === -1) {
-      dispatch(addTown(town));
-      dispatch(getTownWeather(town));
+    const resultTown = town.charAt(0).toUpperCase() + town.slice(1);
+    if (resultTown !== "" && towns.indexOf(resultTown) === -1) {
+      dispatch(addTown(resultTown));
+      dispatch(getTownWeather(resultTown));
     } else {
-      <Alert
-        message="Error"
-        description="This is an error message about copywriting."
-        type="error"
-        showIcon
-      />;
+      if (town === "") setError("Нельзя добавить пустое значение!");
     }
 
     setInputTown("");
@@ -54,6 +48,7 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
   return (
     <>
       <Drawer
+        className="drawer"
         title={`Информация о погоде`}
         placement="right"
         size="large"
@@ -77,17 +72,19 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
       >
         <Form.Item
           // label="Fail"
-          validateStatus="error"
-          help="Should be combination of numbers & alphabets"
+          validateStatus={!error ? undefined : "error"}
+          help={!error ? undefined : error}
+          style={{ marginBottom: "30px" }}
         >
-          {/* <Space.Compact style={{ width: "100%", marginBottom: "20px" }}> */}
-          <Flex>
+          <Space.Compact style={{ width: "100%" }}>
+            {/* <Flex> */}
             <Input
               placeholder="Введите город для добавления"
               value={inputTown}
               name="inputTown"
               onChange={handleInputChange}
-              status="error"
+              // status={!error ? undefined : "error"}
+              required={true}
             />
             {/* onClick={handleClickAddTown} */}
             <Button
@@ -97,8 +94,8 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
             >
               +
             </Button>
-          </Flex>
-          {/* </Space.Compact> */}
+            {/* </Flex> */}
+          </Space.Compact>
           {/* <Input placeholder="unavailable choice" id="error" /> */}
         </Form.Item>
 

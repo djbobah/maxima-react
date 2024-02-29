@@ -17,34 +17,15 @@ export const getArray = (n) => {
   return arr;
 };
 
-// type TGetWeather={
-//   town:string
+// export async function getWeather(town: string) {
+//   const API_KEY = "306e09cb7cf278985a4d29a8e587a676";
+//   const { data } = await axios({
+//     method: "get",
+//     url: `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`,
+//   });
+//   console.log(data);
+//   return data;
 // }
-// type TgetWeather = (a: string) => void;
-
-// const ProductService = {
-//   getProducts: async () => {
-//     const { data } = await axios({
-//       method: "get",
-//       url: "http://localhost:8081/products",
-//     });
-//     return data;
-//   },
-// };
-
-// export const getWeather2={
-
-// }
-
-export async function getWeather(town: string) {
-  const API_KEY = "306e09cb7cf278985a4d29a8e587a676";
-  const { data } = await axios({
-    method: "get",
-    url: `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${API_KEY}`,
-  });
-  console.log(data);
-  return data;
-}
 
 class Counter {
   val: number;
@@ -60,7 +41,6 @@ class Counter {
   dec() {
     this.val -= 1;
   }
-  // getVal()
 }
 
 export default Counter;

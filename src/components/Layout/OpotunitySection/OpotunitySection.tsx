@@ -33,8 +33,6 @@ const OpotunitySection = ({
   setOpenModal,
   disableButton,
 }: OpotunitySectionProps) => {
-  // console.log(count);
-
   const style = {
     gridTemplateColumns: `repeat(${count || 1}, ${size || "1fr"})`,
   };
