@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, Flex, Space, Typography } from "antd";
+import { Card, Flex, Typography } from "antd";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import "./cardWeather.scss";
 import { useAppDispatch } from "src/utils/hooks";
@@ -9,7 +9,7 @@ const { Text } = Typography;
 
 export default function CardWeather({ town }) {
   const dispatch = useAppDispatch();
-  console.log(town);
+  // console.log(town);
   return (
     <>
       {town && (

@@ -30,14 +30,14 @@ const Modal = ({ setOpenModal, openModal, setDisableButton }: ModalProps) => {
   };
 
   const handler = () => {
-    const data = {
-      name,
-      organization,
-      position,
-      email,
-      phone,
-      agreement,
-    };
+    // const data = {
+    //   name,
+    //   organization,
+    //   position,
+    //   email,
+    //   phone,
+    //   agreement,
+    // };
     setDisableButton(true);
     closeHandler();
   };

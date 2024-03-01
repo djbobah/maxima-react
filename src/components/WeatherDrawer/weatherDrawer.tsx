@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from "react";
-import { Button, Drawer, Flex, Form, Input, Space } from "antd";
+import { Button, Drawer, Form, Input, Space } from "antd";
 import { CopyrightOutlined } from "@ant-design/icons";
 import "./weatherDrawer.scss";
 import CardWeather from "../CardWeather/cardWeather";
-import { addTown, getTownWeather, setError } from "../../store/weather";
+import { addTown, getTownWeather } from "../../store/weather";
 import { useAppDispatch, useAppSelector } from "src/utils/hooks";
 
 type TWeatherDrawer = {
