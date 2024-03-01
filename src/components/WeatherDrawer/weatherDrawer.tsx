@@ -40,6 +40,7 @@ const WeatherDrawer: React.FC<TWeatherDrawer> = ({
       dispatch(getTownWeather(resultTown));
     } else {
       if (town === "") setError("Нельзя добавить пустое значение!");
+      if (towns.indexOf(resultTown) >= 0) setError("Такой город уже есть!");
     }
 
     setInputTown("");
